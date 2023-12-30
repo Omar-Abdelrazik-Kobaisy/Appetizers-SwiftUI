@@ -11,6 +11,9 @@ class AppetizerListViewModel: ObservableObject{
     @Published private(set) var appetizers: [Appetizer]?
     @Published var alertItem: AlertItem?
     @Published var isLoading = false
+    @Published var isShowingDetail = false
+    @Published var selectedAppetizer: Appetizer?
+    
     init(){
         getAppetizers()
     }

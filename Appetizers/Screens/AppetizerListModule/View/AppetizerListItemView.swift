@@ -13,8 +13,6 @@ extension Image {
         self
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(width: 120 , height: 90)
-            .cornerRadius(10)
     }
 }
 struct AppetizerListItemView: View {
@@ -29,6 +27,7 @@ struct AppetizerListItemView: View {
 //                    .modifier()
 //            }
             AppetizerRemoteImage(url: appetizer.imageURL)
+                .frame(width: 120 , height: 90)
             VStack(alignment:.leading,spacing: 5){
                 Text(appetizer.name)
                     .font(.title2)
