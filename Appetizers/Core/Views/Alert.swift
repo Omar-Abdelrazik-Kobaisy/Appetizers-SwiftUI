@@ -15,16 +15,25 @@ struct AlertItem: Identifiable{
 }
 
 struct AlertContext{
-    static let invalidData = AlertItem(title: Text("Server Error"),
+    static let invalidData = AlertItem(title: Text("Server Error -> invalid Data"),
                                        message: Text("error message friendly to user"),
                                        dismissButton: .default(Text("Ok")))
-    static let invalidResponse = AlertItem(title: Text("Server Error"),
+    static let invalidResponse = AlertItem(title: Text("Server Error -> invalid Response"),
                                        message: Text("error message friendly to user"),
                                        dismissButton: .default(Text("Ok")))
-    static let invalidURL = AlertItem(title: Text("Server Error"),
+    static let invalidURL = AlertItem(title: Text("Server Error -> invalid URL"),
                                        message: Text("error message friendly to user"),
                                        dismissButton: .default(Text("Ok")))
-    static let unableToComplete = AlertItem(title: Text("Server Error"),
+    static let unableToComplete = AlertItem(title: Text("Server Error -> unable To Complete"),
+                                       message: Text("error message friendly to user"),
+                                       dismissButton: .default(Text("Ok")))
+    static let invalidForm = AlertItem(title: Text("invalid Form"),
+                                       message: Text("error message friendly to user"),
+                                       dismissButton: .default(Text("Ok")))
+    static let invalidEmail = AlertItem(title: Text("invalid Email"),
+                                       message: Text("error message friendly to user"),
+                                       dismissButton: .default(Text("Ok")))
+    static let savedSuccessfully = AlertItem(title: Text("savedSuccessfully"),
                                        message: Text("error message friendly to user"),
                                        dismissButton: .default(Text("Ok")))
 }

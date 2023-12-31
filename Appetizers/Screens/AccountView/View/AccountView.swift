@@ -9,33 +9,34 @@ import SwiftUI
 
 struct AccountView: View {
     
-    @State private var firstName = ""
-    @State private var lastName = ""
-    @State private var email = ""
-    @State private var birthday = Date()
-    @State private var extraNapKins = false
-    @State private var frequentRefill = false
+//    @State private var firstName = ""
+//    @State private var lastName = ""
+//    @State private var email = ""
+//    @State private var birthday = Date()
+//    @State private var extraNapKins = false
+//    @State private var frequentRefill = false
+    @StateObject var vm = AccountViewModel()
     
     var body: some View {
         NavigationStack{
             Form{
                 Section {
                     TextField("FirstName",
-                              text: $firstName)
+                              text: $vm.user.firstName)
                     TextField("LastName",
-                              text: $lastName)
+                              text: $vm.user.lastName)
                     TextField("Email",
-                              text: $email)
+                              text: $vm.user.email)
                     .keyboardType(.emailAddress)
                     .textInputAutocapitalization(.none)
                     .autocorrectionDisabled(true)
                     
                     DatePicker("Birthday",
-                               selection: $birthday,
+                               selection: $vm.user.birthday,
                                displayedComponents: .date)
                     
                     Button {
-                        print("PersonalInfoSaved ->"+firstName+", "+lastName+", "+email)
+                        vm.SaveChanges()
                     } label: {
                         Text("Save Changes")
                     }
@@ -45,15 +46,20 @@ struct AccountView: View {
                 }
                 Section {
                     Toggle("Extra Napkins",
-                           isOn: $extraNapKins)
+                           isOn: $vm.user.extraNapKins)
                     Toggle("Frequent Refill",
-                           isOn: $frequentRefill)
+                           isOn: $vm.user.frequentRefill)
                 } header: {
                     Text("Requests")
                 }
                 .tint(.brandPrimary)
             }
                 .navigationTitle("Accounts")
+        }
+        .alert(item: $vm.alert) { alertItem in
+            Alert(title: alertItem.title,
+                  message: alertItem.message,
+                  dismissButton: alertItem.dismissButton)
         }
     }
 }
