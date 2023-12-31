@@ -32,13 +32,21 @@ class AccountViewModel: ObservableObject{
             return
         }
         guard let userData = user.convert(object: user) else{
-            alert = AlertContext.invalidData
+            alert = AlertContext.invaidUserData
             return
         }
         self.userData = userData
         alert = AlertContext.savedSuccessfully
     }
     
+    func retrieveUser(){
+        guard let userData = userData else{ return }
+        guard let user = user.convert(Data: userData) else {
+            alert = AlertContext.invaidUserData
+            return
+        }
+        self.user = user
+    }
     
     
 }

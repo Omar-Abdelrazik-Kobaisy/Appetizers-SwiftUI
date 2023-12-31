@@ -58,12 +58,16 @@ final class NetworkManager {
     }
     
     
-    func downloadImage(fromURLString url: String, completion: @escaping((UIImage?) -> Void)){
-        if let image = cache.object(forKey: NSString(string: url)){
+    func downloadImage(fromURLString stringURL: String, completion: @escaping((UIImage?) -> Void)){
+        if let image = cache.object(forKey: NSString(string: stringURL)){
             completion(image)
             return
         }
-        let task = URLSession.shared.dataTask(with: URL(string: url)!) {[weak self] data, response, error in
+        guard let url = URL(string: stringURL) else{
+            completion(UIImage(named: "food-placeholder"))
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) {[weak self] data, response, error in
             
             guard let response = response as? HTTPURLResponse,
                   response.statusCode == 200,
@@ -78,7 +82,7 @@ final class NetworkManager {
                 completion(nil)
                 return
             }
-            self.cache.setObject(uiImage, forKey: NSString(string: url))
+            self.cache.setObject(uiImage, forKey: NSString(string: stringURL))
             print("image loaded")
             completion(uiImage)
         }

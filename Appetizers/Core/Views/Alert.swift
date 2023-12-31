@@ -36,4 +36,7 @@ struct AlertContext{
     static let savedSuccessfully = AlertItem(title: Text("savedSuccessfully"),
                                        message: Text("error message friendly to user"),
                                        dismissButton: .default(Text("Ok")))
+    static let invaidUserData = AlertItem(title: Text("Error->invalidUserData, "),
+                                       message: Text("error message friendly to user"),
+                                       dismissButton: .default(Text("Ok")))
 }

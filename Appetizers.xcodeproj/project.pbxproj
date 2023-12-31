@@ -19,6 +19,7 @@
 		07B22F152B41225600A2CD28 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B22F142B41225600A2CD28 /* AccountViewModel.swift */; };
 		07B22F172B41254800A2CD28 /* String+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B22F162B41254800A2CD28 /* String+EXT.swift */; };
 		07B22F1A2B412A5C00A2CD28 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B22F192B412A5C00A2CD28 /* User.swift */; };
+		07BA896E2B4202E700C250F1 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BA896D2B4202E700C250F1 /* EmptyState.swift */; };
 		07C0AB582B40A52100A97527 /* ApButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0AB572B40A52100A97527 /* ApButton.swift */; };
 		07C0AB5A2B40A63500A97527 /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0AB592B40A63500A97527 /* XDismissButton.swift */; };
 		07DDD82D2B3B70D20054F654 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DDD82C2B3B70D20054F654 /* NetworkManager.swift */; };
@@ -44,6 +45,7 @@
 		07B22F142B41225600A2CD28 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		07B22F162B41254800A2CD28 /* String+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+EXT.swift"; sourceTree = "<group>"; };
 		07B22F192B412A5C00A2CD28 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		07BA896D2B4202E700C250F1 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 		07C0AB572B40A52100A97527 /* ApButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApButton.swift; sourceTree = "<group>"; };
 		07C0AB592B40A63500A97527 /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
 		07DDD82C2B3B70D20054F654 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				07DDD8302B3B88E90054F654 /* Alert.swift */,
 				07C0AB572B40A52100A97527 /* ApButton.swift */,
 				07C0AB592B40A63500A97527 /* XDismissButton.swift */,
+				07BA896D2B4202E700C250F1 /* EmptyState.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				07DDFCE72B3CC468000C8B17 /* LoadingView.swift in Sources */,
 				0782E96C2B3A1B3A00F6E4E5 /* AppetizerTabView.swift in Sources */,
 				07DDD82F2B3B85410054F654 /* AppetizerListViewModel.swift in Sources */,
+				07BA896E2B4202E700C250F1 /* EmptyState.swift in Sources */,
 				07DDD82D2B3B70D20054F654 /* NetworkManager.swift in Sources */,
 				07B22F172B41254800A2CD28 /* String+EXT.swift in Sources */,
 				0782E96A2B3A1B3A00F6E4E5 /* AppetizersApp.swift in Sources */,
