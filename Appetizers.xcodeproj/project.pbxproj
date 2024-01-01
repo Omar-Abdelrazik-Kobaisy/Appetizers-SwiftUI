@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070810862B434BA700BD2C01 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070810852B434BA700BD2C01 /* Order.swift */; };
 		0782E96A2B3A1B3A00F6E4E5 /* AppetizersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782E9692B3A1B3A00F6E4E5 /* AppetizersApp.swift */; };
 		0782E96C2B3A1B3A00F6E4E5 /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782E96B2B3A1B3A00F6E4E5 /* AppetizerTabView.swift */; };
 		0782E96E2B3A1B3C00F6E4E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0782E96D2B3A1B3C00F6E4E5 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		070810852B434BA700BD2C01 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		0782E9662B3A1B3A00F6E4E5 /* Appetizers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetizers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0782E9692B3A1B3A00F6E4E5 /* AppetizersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizersApp.swift; sourceTree = "<group>"; };
 		0782E96B2B3A1B3A00F6E4E5 /* AppetizerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerTabView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		070810842B434B9100BD2C01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				070810852B434BA700BD2C01 /* Order.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0782E95D2B3A1B3900F6E4E5 = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +198,7 @@
 		07DDFCF22B3CDC6D000C8B17 /* OrderView */ = {
 			isa = PBXGroup;
 			children = (
+				070810842B434B9100BD2C01 /* Model */,
 				0782E97B2B3A1C2000F6E4E5 /* OrderView.swift */,
 			);
 			path = OrderView;
@@ -325,6 +336,7 @@
 				07F6CF692B3EAEC7003AB42B /* DetailView.swift in Sources */,
 				07DDFCE72B3CC468000C8B17 /* LoadingView.swift in Sources */,
 				0782E96C2B3A1B3A00F6E4E5 /* AppetizerTabView.swift in Sources */,
+				070810862B434BA700BD2C01 /* Order.swift in Sources */,
 				07DDD82F2B3B85410054F654 /* AppetizerListViewModel.swift in Sources */,
 				07BA896E2B4202E700C250F1 /* EmptyState.swift in Sources */,
 				07DDD82D2B3B70D20054F654 /* NetworkManager.swift in Sources */,

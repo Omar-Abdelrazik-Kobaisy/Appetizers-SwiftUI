@@ -9,13 +9,15 @@ import SwiftUI
 
 struct OrderView: View {
     //MARK: properties
-    @State private var orderItems = MockData.orderItems
+//    @State private var orderItems = MockData.orderItems
+    @EnvironmentObject var order: Order
+    @State private var showAlert = false
     var body: some View {
         NavigationStack{
             ZStack{
                 VStack{
                     List{
-                        ForEach(orderItems) { order in
+                        ForEach(order.OrderItems) { order in
                             AppetizerListItemView(appetizer: order)
                         }
                         .onDelete(perform: deleteItems(at:))
@@ -23,15 +25,19 @@ struct OrderView: View {
                     .listStyle(.plain)
                     
                     Button {
-                        
+                        showAlert = true
                     } label: {
-                        ApButton(title: "$99.99 - Place Order")
+                        ApButton(title: "$\(order.totalPrice,specifier: "%.2f") - Place Order")
                     }
                     .padding(.bottom , 30)
 
+                }.alert(isPresented: $showAlert) {
+                    Alert(title: Text("Order Placed"),
+                    message: Text("your order placed successfully🎉"),
+                          dismissButton: .cancel(Text("ok")))
                 }
                 
-                if orderItems.isEmpty{
+                if order.OrderItems.isEmpty{
                     EmptyState(imageName: "empty-order",
                                message: "Add something to your Cart 🛒")
                 }
@@ -41,12 +47,13 @@ struct OrderView: View {
     }
     
     func deleteItems(at offsets: IndexSet){
-        orderItems.remove(atOffsets: offsets)
+        order.OrderItems.remove(atOffsets: offsets)
     }
 }
 
 struct OrderView_Previews: PreviewProvider {
     static var previews: some View {
         OrderView()
+            .environmentObject(Order())
     }
 }

@@ -31,8 +31,7 @@ struct AppetizerListView: View {
             
             if vm.isShowingDetail{
                 // we need trak the selected item(appetizer item)
-                DetailView(appetizer: vm.selectedAppetizer ?? MockData.sampleData, isShowingDetail: $vm.isShowingDetail)
-                
+                    DetailView(appetizer: vm.selectedAppetizer ?? MockData.sampleData, isShowingDetail: $vm.isShowingDetail) 
             }
             
             if vm.isLoading{

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DetailView: View {
+    
+    @EnvironmentObject var order: Order
     var appetizer: Appetizer // no need to be @Binding cuz we nedd to read only not read and write
     @Binding var isShowingDetail: Bool
     var body: some View {
@@ -39,7 +41,8 @@ struct DetailView: View {
                 Spacer()
 
                 Button {
-                    print("tapped")
+                    order.OrderItems.append(appetizer)
+                    isShowingDetail = false
                 } label: {
                     ApButton(title: "$\(appetizer.price,specifier: "%.2f") - Add To Order")
                 }
@@ -64,6 +67,7 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView(appetizer: MockData.sampleData, isShowingDetail: .constant(true))
+            .environmentObject(Order())
     }
 }
 
