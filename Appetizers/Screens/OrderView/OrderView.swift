@@ -27,8 +27,10 @@ struct OrderView: View {
                     Button {
                         showAlert = true
                     } label: {
-                        ApButton(title: "$\(order.totalPrice,specifier: "%.2f") - Place Order")
+//                        ApButton(title: "$\(order.totalPrice,specifier: "%.2f") - Place Order")
+                        Text("$\(order.totalPrice,specifier: "%.2f") - Place Order")
                     }
+                    .modifier(StandardButtonStyle())
                     .padding(.bottom , 30)
 
                 }.alert(isPresented: $showAlert) {
@@ -37,10 +39,10 @@ struct OrderView: View {
                           dismissButton: .cancel(Text("ok")))
                 }
                 
-                if order.OrderItems.isEmpty{
-                    EmptyState(imageName: "empty-order",
-                               message: "Add something to your Cart 🛒")
-                }
+//                if order.OrderItems.isEmpty{
+//                    EmptyState(imageName: "empty-order",
+//                               message: "Add something to your Cart 🛒")
+//                }
             }
             .navigationTitle("Orders")
         }

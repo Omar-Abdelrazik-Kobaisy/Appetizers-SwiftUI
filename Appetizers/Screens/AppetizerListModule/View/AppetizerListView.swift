@@ -18,8 +18,10 @@ struct AppetizerListView: View {
                     List(appetizers){appetizer in
                         AppetizerListItemView(appetizer: appetizer)
                             .onTapGesture {
-                                vm.isShowingDetail = true
-                                vm.selectedAppetizer = appetizer
+                                withAnimation {
+                                    vm.isShowingDetail = true
+                                    vm.selectedAppetizer = appetizer
+                                }
                             }
                     }
                     .listStyle(.plain)

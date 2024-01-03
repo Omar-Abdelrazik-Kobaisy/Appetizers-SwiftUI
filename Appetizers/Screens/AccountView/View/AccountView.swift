@@ -16,6 +16,11 @@ struct AccountView: View {
 //    @State private var extraNapKins = false
 //    @State private var frequentRefill = false
     @StateObject var vm = AccountViewModel()
+    @FocusState var focusTextField: FormTextField?
+    
+    enum FormTextField{
+        case firstName, lastName, email
+    }
     
     var body: some View {
         NavigationStack{
@@ -23,10 +28,22 @@ struct AccountView: View {
                 Section {
                     TextField("FirstName",
                               text: $vm.user.firstName)
+                    .focused($focusTextField, equals: .firstName)
+                    .onSubmit {
+                        focusTextField = .lastName
+                    }.submitLabel(.next)
                     TextField("LastName",
                               text: $vm.user.lastName)
+                    .focused($focusTextField, equals: .lastName)
+                    .onSubmit {
+                        focusTextField = .email
+                    }.submitLabel(.next)
                     TextField("Email",
                               text: $vm.user.email)
+                    .focused($focusTextField, equals: .email)
+                    .onSubmit {
+                        focusTextField = nil
+                    }.submitLabel(.continue)
                     .keyboardType(.emailAddress)
                     .textInputAutocapitalization(.none)
                     .autocorrectionDisabled(true)
