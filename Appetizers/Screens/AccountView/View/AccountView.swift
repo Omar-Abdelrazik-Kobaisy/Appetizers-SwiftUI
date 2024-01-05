@@ -72,6 +72,18 @@ struct AccountView: View {
                 .tint(.brandPrimary)
             }
                 .navigationTitle("Accounts")
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard, content: {
+                        Button {
+                            focusTextField = nil
+                        } label: {
+                            Text("Dismiss")
+                        }
+                        .frame(maxWidth: .infinity,alignment: .trailing)
+                        .padding(.trailing)
+
+                    })
+                }
         }
         .onAppear(perform: {
             vm.retrieveUser()
